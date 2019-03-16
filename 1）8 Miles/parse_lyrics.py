@@ -20,7 +20,7 @@ def parse_lyrics(lyrics):
     words = Counter(lyrics.split(" "))# a dict { 'word':count }
 
     #filter
-    filter_manual = ['a', 'like', 'get', 'can', 'at', 'till', 'are']
+    filter_manual = ['a', 'like', 'get', 'can', 'at', 'till', 'are', 'back']
     nouns = {x.name().split('.', 1)[0] for x in nltk.corpus.wordnet.all_synsets('n')}
     for word in list(words.keys()):
         if word.lower() not in nouns or word.lower() in filter_manual:

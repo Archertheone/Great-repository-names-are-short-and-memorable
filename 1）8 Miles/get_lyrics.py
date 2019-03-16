@@ -28,8 +28,8 @@ def get_music_ids_by_musician_id(musician_id):
     ids = {}
     # print(len(j))
     for item in j:
-        print(item['id'])
-        # ids[item['name']] = item['id']
+        # print(item['id'])
+        ids[item['name']] = item['id']
     return ids
 
 
@@ -55,10 +55,10 @@ def download_lyrics(musician_id, music_ids):
     os.chdir(str(musician_id))
 
     #download lyric for each music
-    for id in music_ids:
-        text = get_lyric_by_id(music_ids[id])
-        file = open(id + '.txt', 'a')
-        file.write(id + '\n')
+    for music_id in music_ids:
+        text = get_lyric_by_id(music_ids[music_id])
+        file = open(music_id + '.txt', 'a')
+        file.write(music_id + '\n')
         file.write(str(text).replace(u'\xa0', u' '))#solve decode problem
         file.close()
 

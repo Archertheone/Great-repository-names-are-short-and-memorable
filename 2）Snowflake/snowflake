@@ -1,0 +1,37 @@
+from turtle import *
+
+#draw one side of a triangle
+def draw_one_side(length, iteration):
+    if iteration == 0:
+        forward(length)
+        return
+    length /= 3.0
+    draw_one_side(length, iteration-1)
+    left(60)
+    draw_one_side(length, iteration-1)
+    right(120)
+    draw_one_side(length, iteration-1)
+    left(60)
+    draw_one_side(length, iteration-1)
+
+#draw a snowflake
+#real name: Koch curve
+def draw_snowflake():
+    #set turtle speed
+    speed(0)
+
+    #set side length
+    length = 200
+
+    #Koch iteration
+    iteration = 4
+
+    for i in range(3):#draw one side each time
+        draw_one_side(length, iteration)
+        right(120)
+
+    mainloop()
+
+
+if __name__ == "__main__":
+    draw_snowflake()

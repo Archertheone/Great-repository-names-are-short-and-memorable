@@ -8,3 +8,10 @@ Download all lyrcis of Eminem from netease music.
 Parse lyrics. What did Eminem sing?
 
 Draw a wordcloud picture!
+
+
+2)Snowflake
+
+Draw a snowflake with turtle.
+
+
